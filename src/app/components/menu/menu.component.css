@@ -1,0 +1,23 @@
+body {
+  padding-top: 60px;
+  margin: 0%;
+}
+
+.navbar {
+  background-color: #2E6DA4;
+  box-shadow: 0 4px 4px rgba(17, 16, 16, 0.2);
+}
+
+.navbar-nav .nav-link {
+  color: #2E6DA4;
+}
+
+.btn {
+  padding: 0.1rem 1.5rem;
+  line-height: 0.90;
+  border-radius: 0.5rem;
+}
+
+nav.navbar.navbar-expand-md {
+  height: 4pc;
+}

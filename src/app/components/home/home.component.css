@@ -1,0 +1,134 @@
+.body {
+
+  background-image: image("/assets/background/cap.png");
+  padding: 0px;
+}
+
+.body[_ngcontent-ng-c3405394857] {
+  padding: 0rem;
+}
+
+.container-fluid {
+  /* display: flex; */
+  /* align-items: center;
+  margin: 10px; */
+  /* flex-direction: row; */
+  /* Vertically center the content */
+  margin: 10px;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+row1 {
+
+  display: flex;
+  gap: 28px;
+  flex-direction: row;
+  justify-content: space-between;
+  resize: both;
+  overflow: auto;
+
+}
+
+.col {
+  text-align: right;
+  border-radius: 20px;
+  float: right;
+  max-width: 50%;
+  flex: 1 1 50%;
+  word-break: break-word;
+
+
+
+}
+
+.col2 {
+  text-align: left;
+
+
+  max-width: 50%;
+  flex: 1 1 50%;
+  word-break: break-word;
+  margin: 4rem;
+}
+
+
+
+.card-deck {
+  /* flex-grow: 1; */
+
+  margin: 0px;
+  margin-top: 0px;
+}
+
+.img-fluid {
+  border-radius: 140px;
+  margin: 50px;
+
+
+}
+
+.pt-5 {
+  background-color: white;
+  box-shadow: black;
+}
+
+.mt-5 {
+  color: black;
+}
+
+h1 {
+  font-family: serif;
+}
+
+.pb-5,
+.py-5 {
+  text-align: left;
+}
+
+.card {
+  width: 300px;
+  height: 300px;
+  background-color: #f1f3f5;
+}
+
+.card-deck {
+  margin-top: 10rem;
+}
+
+.card-home {
+  background-image: url("https://cdn.shopify.com/s/files/1/0408/5792/7834/files/redux-bg-A-4_522x.jpg") !important;
+  color: white !important;
+}
+
+.cards-icons {
+  background: -webkit-linear-gradient(#f1f3f5, #fbfdfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-top: -10%;
+}
+
+.cards-equipos {
+  background-image: url("https://cdn.shopify.com/s/files/1/0408/5792/7834/files/Better_400x.jpg") !important;
+  color: white !important;
+}
+
+.my__img {
+  height: 120px;
+  width: 120px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.custom__button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: -33px;
+}

@@ -1,0 +1,75 @@
+<div class="app-body">
+
+  <div class="main d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div class="card-group">
+            <div class="card p-4">
+              <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+              <div class="card-body">
+                <h1 style="text-align: center">Login</h1>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="icon-user"></i></span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="username" autocomplete="current-password"
+                    name="username" [(ngModel)]="admin.username">
+
+                </div>
+                <div class="input-group mb-4">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="icon-lock"></i></span>
+                  </div>
+                  <input type="password" class="form-control" placeholder="password" autocomplete="current-password"
+                    [(ngModel)]="admin.password">
+                </div>
+                <div style="text-align: center;">
+                  <button style="width: 20%" type="button" class="btn btn-primary"
+                    (click)="handelLogin()">login</button>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ................. -->
+<!-- <h2 mat-dialog-title>Login</h2>
+<form>
+  <div mat-dialog-content>
+    <mat-form-field>
+      <mat-label>UserName</mat-label>
+      <mat-icon matPrefix>create</mat-icon>
+      <input type="text" class="form-control" placeholder="username" autocomplete="current-password" name="username"
+        [(ngModel)]="admin.username">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>LastName</mat-label>
+      <mat-icon matPrefix>create</mat-icon>
+      <input type="password" class="form-control" placeholder="password" autocomplete="current-password"
+        [(ngModel)]="admin.password">
+    </mat-form-field>
+
+
+  </div>
+  <div mat-dialog-actions class="mat-dialog-actions-align-end">
+    <button style="width: 20%" type="button" class="btn btn-primary" (click)="handelLogin()">login</button>
+  </div>
+</form> -->
+<!-- ......................... -->
+
+
+<!-- <small *ngIf="invalidLogin">{{errorMessage}}</small>
+<h1>LOGIN</h1>
+
+<div>
+  User name :<input type="text" name="username" [(ngModel)]="username">
+  Password :<input type="password" name="password" [(ngModel)]="password">
+
+  <button (click)=handelLogin()>Login</button>
+</div> -->
