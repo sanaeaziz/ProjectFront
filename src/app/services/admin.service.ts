@@ -18,9 +18,10 @@ export class AdminService {
   }
   searchAdmin(theKeyword: string): Observable<Admin[]> {
     // need build URL based on the keyword
-    const searchUrl = `${this.baseUrl}/search/findByFirstNameContaining?firstName=${theKeyword}`;
+    const searchUrl = `${this.baseUrl}/search/findByFirstNameContainingOrLastNameContaining?firstName=${theKeyword}`;
     return this.httpClient.get<GetResponse>(searchUrl).pipe(
       map(reponse => reponse._embedded.admins)
+
     );
   }
 

@@ -1,6 +1,6 @@
 .body {
 
-  background-image: image("/assets/background/cap.png");
+  background-image: image("/assets/background/cap.png") !important;
   padding: 0px;
 }
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { AdminAddEditComponent } from '../admin-add-edit/admin-add-edit.component';
 
 
@@ -12,8 +12,21 @@ export class AddBtnAdminComponent {
   constructor(private dialog: MatDialog) { }
 
   openAddAdminModal(): void {
+
+
+    // const dialogConfig = new MatDialogConfig();
+
+    // if (operationType === 'Add') {
+    //   dialogConfig.width = '500px'; // Adjust the desired width for Add operation
+    //   dialogConfig.height = '300px'; // Adjust the desired height for Add operation
+    // } else if (operationType === 'Update') {
+    //   dialogConfig.width = '800px'; // Adjust the desired width for Update operation
+    //   dialogConfig.height = '400px'; // Adjust the desired height for Update operation
+    // }
+
     const dialogRef = this.dialog.open(AdminAddEditComponent, {
-      width: '350px'
+      width: '540px'
+
     });
 
     dialogRef.afterClosed().subscribe(result => {

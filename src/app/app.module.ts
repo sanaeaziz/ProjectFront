@@ -29,6 +29,12 @@ import { AdminAddEditComponent } from './components/admin-add-edit/admin-add-edi
 import { SearchAdminComponent } from './components/search-admin/search-admin.component';
 import { FormsModule } from '@angular/forms';
 import { AddBtnAdminComponent } from './components/add-btn-admin/add-btn-admin.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDatepicker } from '@angular/material/datepicker';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
+
+
 
 
 
@@ -65,6 +71,9 @@ import { AddBtnAdminComponent } from './components/add-btn-admin/add-btn-admin.c
     MatTableModule,
     MatPaginatorModule,
     ReactiveFormsModule,
+    MatDatepickerModule,
+    MatSelectModule,
+    MatCardModule,
     FormsModule
   ],
   providers: [],

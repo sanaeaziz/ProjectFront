@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { DepartementAddEditComponent } from '../departement-add-edit/departement-add-edit.component';
+import { AdminAddEditComponent } from '../admin-add-edit/admin-add-edit.component';
 
 @Component({
   selector: 'app-add-btn',
@@ -13,9 +14,10 @@ export class AddBtnComponent {
 
   openAddDepartmentModal(): void {
     const dialogRef = this.dialog.open(DepartementAddEditComponent, {
-      width: '350px'
+      width: '340px'
+
     });
-  
+
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
       }

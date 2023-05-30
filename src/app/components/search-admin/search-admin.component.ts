@@ -14,6 +14,6 @@ export class SearchAdminComponent implements OnInit {
   }
 
   doSearch(value: string) {
-    this.router.navigateByUrl(`/search/${value}`);
+    this.router.navigateByUrl(`/search-admin/${value}`);
   }
 }

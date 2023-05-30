@@ -7,6 +7,8 @@ import { AdminService } from 'src/app/services/admin.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 import { AdminAddEditComponent } from '../admin-add-edit/admin-add-edit.component';
+import { Departement } from 'src/app/common/departement';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-admin',
@@ -14,6 +16,8 @@ import { AdminAddEditComponent } from '../admin-add-edit/admin-add-edit.componen
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
+  departements: Departement[] = [];
+  admin: Admin = new Admin();
 
 
   displayedColumns: string[] = ['id', 'firstName', 'lastName', 'action'];
@@ -32,7 +36,10 @@ export class AdminComponent implements OnInit {
 
   constructor(private adminService: AdminService,
     private dialog: MatDialog,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private http: HttpClient
+
+  ) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(() => {
@@ -94,6 +101,7 @@ export class AdminComponent implements OnInit {
 
   openEditAdminModal(data: any): void {
     this.dialog.open(AdminAddEditComponent, {
+      width: '540px',
       data,
     });
   }
@@ -106,4 +114,23 @@ export class AdminComponent implements OnInit {
       error: console.log,
     })
   }
+
+  // pour assigner chaque admin a une departement
+
+  fetchDepartments(): void {
+    this.http.get<Departement[]>('/api/departements')
+      .subscribe(departements => {
+        this.departements = departements;
+      });
+  }
+
+  addAdmin(): void {
+    // Send the admin data including the departmentId to the backend
+    this.http.post('/api/admins', this.admin)
+      .subscribe(response => {
+        // Handle the response
+      });
+  }
+
+
 }

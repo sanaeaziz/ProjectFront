@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'departements', component: DepartementsComponent },
   { path: 'admins', component: AdminComponent },
   { path: 'search/:keyword', component: DepartementsComponent },
+  { path: 'search/:keyword', component: AdminComponent },
   { path: 'departements/:id', component: DepartementsComponent },
   { path: 'admins/:id', component: AdminComponent },
   { path: 'login', component: LoginComponent },
