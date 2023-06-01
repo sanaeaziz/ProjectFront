@@ -16,8 +16,8 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  departements: Departement[] = [];
-  admin: Admin = new Admin();
+  // departements: Departement[] = [];
+  // admin: Admin = new Admin();
 
 
   displayedColumns: string[] = ['id', 'firstName', 'lastName', 'action'];
@@ -37,7 +37,7 @@ export class AdminComponent implements OnInit {
   constructor(private adminService: AdminService,
     private dialog: MatDialog,
     private route: ActivatedRoute,
-    private http: HttpClient
+
 
   ) { }
 
@@ -59,10 +59,10 @@ export class AdminComponent implements OnInit {
   }
 
   handleSearchAdmin() {
-    const theKeyword: string = this.route.snapshot.paramMap.get('keyword')!;
+    const lastName: string = this.route.snapshot.paramMap.get('lastName')!;
 
     // now search for the admins using keyword
-    this.adminService.searchAdmin(theKeyword).subscribe(
+    this.adminService.searchAdmin(lastName).subscribe(
       data => {
         this.admins = data;
         this.dataSource = new MatTableDataSource(data);
@@ -117,20 +117,20 @@ export class AdminComponent implements OnInit {
 
   // pour assigner chaque admin a une departement
 
-  fetchDepartments(): void {
-    this.http.get<Departement[]>('/api/departements')
-      .subscribe(departements => {
-        this.departements = departements;
-      });
-  }
+  // fetchDepartments(): void {
+  //   this.http.get<Departement[]>('/api/departements')
+  //     .subscribe(departements => {
+  //       this.departements = departements;
+  //     });
+  // }
 
-  addAdmin(): void {
-    // Send the admin data including the departmentId to the backend
-    this.http.post('/api/admins', this.admin)
-      .subscribe(response => {
-        // Handle the response
-      });
-  }
+  // addAdmin(): void {
+  //   // Send the admin data including the departmentId to the backend
+  //   this.http.post('/api/admins', this.admin)
+  //     .subscribe(response => {
+  //       // Handle the response
+  //     });
+  // }
 
 
 }

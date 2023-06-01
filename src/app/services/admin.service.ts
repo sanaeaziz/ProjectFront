@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Admin } from '../common/admin';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
@@ -16,13 +16,25 @@ export class AdminService {
     return this.httpClient.get<Admin[]>(this.baseUrl);
 
   }
-  searchAdmin(theKeyword: string): Observable<Admin[]> {
-    // need build URL based on the keyword
-    const searchUrl = `${this.baseUrl}/search/findByFirstNameContainingOrLastNameContaining?firstName=${theKeyword}`;
-    return this.httpClient.get<GetResponse>(searchUrl).pipe(
-      map(reponse => reponse._embedded.admins)
+  // searchAdmin(searchTerm: string): Observable<Admin[]> {
+  //   let params = new HttpParams();
+  //   params = params.set('searchTerm', searchTerm);
+  //   console.log(params);
+  //   return this.httpClient.get<Admin[]>(`${this.baseUrl}/search`, { params });
+  // }
 
-    );
+
+
+  searchAdmin(LastName: string): Observable<Admin[]> {
+
+    // need build URL based on the keyword
+    // const params = new HttpParams().set('lastName', lastName);
+    // return this.httpClient.get<Admin[]>(this.baseUrl, { params });
+    const searchUrl = `http://localhost:8085/api/admins/search?lastName=${LastName}`;
+    return this.httpClient.get<Admin[]>(searchUrl);
+
+
+
   }
 
 
@@ -39,6 +51,10 @@ export class AdminService {
     // need build URL based on the id
     const deleteUrl = `${this.baseUrl}/${id}`;
     return this.httpClient.delete(deleteUrl);
+  }
+
+  getDepartementList(): Observable<any[]> {
+    return this.httpClient.get<any[]>('http://localhost:8085/api/departements');
   }
 
 }

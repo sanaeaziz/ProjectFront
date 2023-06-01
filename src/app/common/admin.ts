@@ -11,6 +11,6 @@ export class Admin {
     public email?: string,
     public password?: string,
     public etat?: boolean,
-    public departement_id?: number) {
+    public departement?: any) {
   }
 }
